@@ -1,38 +1,18 @@
-# EnkuPrismExtension
+# ![titleImage](./img/title.png)
+
+[NuGet Gallery | EnkuPrismExtension 0.0.0](https://www.nuget.org/packages/EnkuPrismExtension)
 
 本ライブラリはWPFにおいてPrismと併用して画面遷移関連の処理を短く書くことを目的に
 作成されたライブラリである。
 
-## Regionの内側から画面遷移を行う
+### 現段階では下記の機能を提供する
 
-### MainWindow.xaml
+- ViewModelBaseを用いたRegionの内側からのNavigate/GoBack/GoForward
+- 各種拡張コマンドを用いたRegionの外側からのNavigate/GoBack/GoForward
 
-```xaml
-
-```
-
-
-
-### MainWindowViewModel.cs
-
-```c#
-```
-
-## Regionの外側から画面遷移を行う
-
-### MainWindow.xaml
-
-```xaml
-
-```
-
-
-
-### MainWindowViewModel.cs
-
-```c#
-
-```
+> 自分しか使わないと思うけど
+>
+> サンプルや本ライブラリの説明は時間が空き次第作成してきます。
 
 ## DependencyLibraries
 
