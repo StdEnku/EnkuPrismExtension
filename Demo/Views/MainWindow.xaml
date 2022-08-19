@@ -8,9 +8,11 @@
         Title="Demo" Height="350" Width="525" >
 
     <DockPanel>
-        <UniformGrid Columns="2" DockPanel.Dock="Bottom">
+        <UniformGrid Columns="4" DockPanel.Dock="Bottom">
             <Button Content="1" Command="{Binding RootRegionNavigateCommand}" CommandParameter="{x:Static constants:ViewNames.Control1}" />
             <Button Content="2" Command="{Binding RootRegionNavigateCommand}" CommandParameter="{x:Static constants:ViewNames.Control2}" />
+            <Button Content="Back" Command="{Binding RootRegionGoBackCommand}" />
+            <Button Content="Forward" Command="{Binding RootRegionGoForwardCommand}" />
         </UniformGrid>
         
         <acl:AnimatedContentControl 
