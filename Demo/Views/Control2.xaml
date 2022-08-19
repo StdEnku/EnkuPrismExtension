@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Demo.Views.Control2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/" 
+             xmlns:constants="clr-namespace:Demo.Constants"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <DockPanel>
+        <Button Content="Navigate" Command="{Binding NavigateCommand}" CommandParameter="{x:Static constants:ViewNames.Control1}" DockPanel.Dock="Bottom" />
+
+        <Viewbox DockPanel.Dock="Top">
+            <Label Content="Control2" />
+        </Viewbox>
+    </DockPanel>
+</UserControl>

@@ -1,0 +1,15 @@
+﻿<Window x:Class="Demo.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:constants="clr-namespace:Demo.Constants"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:acl="http://AnimatedContentControlLib/Wpf/"
+        Title="Demo" Height="350" Width="525" >
+
+    <acl:AnimatedContentControl 
+        NextBuiltInAnimKey="RotateBigToSmoleToBig"
+        prism:RegionManager.RegionName="{x:Static constants:RegionNames.RootRegion}"
+        InitCommand="{Binding RootRegionNavigateCommand}"
+        InitCommandParameter="{x:Static constants:ViewNames.Control1}"/>
+</Window>

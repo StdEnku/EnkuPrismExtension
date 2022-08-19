@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnkuPrismExtension", "EnkuP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnkuPrismExtension.Test", "EnkuPrismExtension.Test\EnkuPrismExtension.Test.csproj", "{CA0E76DB-254F-4406-89B4-ACBA4935B420}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{96F29A2D-2DB1-489B-A703-F7CDF523D749}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CA0E76DB-254F-4406-89B4-ACBA4935B420}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA0E76DB-254F-4406-89B4-ACBA4935B420}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA0E76DB-254F-4406-89B4-ACBA4935B420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F29A2D-2DB1-489B-A703-F7CDF523D749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F29A2D-2DB1-489B-A703-F7CDF523D749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F29A2D-2DB1-489B-A703-F7CDF523D749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F29A2D-2DB1-489B-A703-F7CDF523D749}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
