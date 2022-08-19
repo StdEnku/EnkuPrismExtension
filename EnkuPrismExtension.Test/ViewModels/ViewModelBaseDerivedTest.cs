@@ -5,7 +5,7 @@ using EnkuPrismExtension.ViewModels;
 using Moq;
 using Prism.Regions;
 
-// ViewModelBaseを継承したクラス
+#region テストで使用するダミーのViewModelBase派生クラス
 class Derived : ViewModelBase
 {
     // BeforeGoBackメソッドが実行されたらtrueとなるフィールド
@@ -40,6 +40,7 @@ class Derived : ViewModelBase
         return NavigationParameters;
     }
 }
+#endregion
 
 public class ViewModelBaseDerivedTest
 {
@@ -86,7 +87,7 @@ public class ViewModelBaseDerivedTest
     }
 
     [Fact]
-    public void BeforeNavigate_NavigateCommand実行後_NavigateParametersが正しく送信できている()
+    public void BeforeNavigate_NavigateCommand実行後_RegionNavigationServiceのRequestNavigateが正しく呼び出されているか()
     {
         // テスト対象の用意
         const string NEXT_VIEW_NAME = "next view";

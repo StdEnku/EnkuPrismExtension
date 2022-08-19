@@ -101,7 +101,7 @@ public class ViewModelBaseTest
 
     #region GoBackCommand
     [Fact]
-    public void GoBackCommand_対象のViewへの画面遷移が行われる前にCanExecuteメソッド実行_Falseを返す()
+    public void GoBackCommand_OnNavigatedToメソッドが呼ばれる前にCanExecuteメソッド実行_Falseを返す()
     {
         var viewModelBase = new ViewModelBase();
         var result = viewModelBase.GoBackCommand.CanExecute();
@@ -111,7 +111,7 @@ public class ViewModelBaseTest
     [Theory]
     [InlineData(true)]
     [InlineData(false)]
-    public void GoBackCommand_対象のViewへの画面遷移が行われた後にCanExecuteメソッド実行_RegionNavigationJournalのCanGoBackプロパティと同じ値が返される(bool canGoBack)
+    public void GoBackCommand_OnNavigatedToメソッドが呼ばれた後にCanExecuteメソッド実行_RegionNavigationJournalのCanGoBackプロパティと同じ値が返される(bool canGoBack)
     {
         this._regionNavigationJournal.Setup(rnj => rnj.CanGoBack).Returns(canGoBack);
         var viewModelBase = new ViewModelBase();
@@ -152,7 +152,7 @@ public class ViewModelBaseTest
 
     #region GoForwardCommand
     [Fact]
-    public void GoForwardCommand_対象のViewへの画面遷移が行われる前にCanExecuteメソッド実行_Falseを返す()
+    public void GoForwardCommand_OnNavigatedToメソッドが呼ばれる前にCanExecuteメソッド実行_Falseを返す()
     {
         var viewModelBase = new ViewModelBase();
         var result = viewModelBase.GoForwardCommand.CanExecute();
@@ -162,7 +162,7 @@ public class ViewModelBaseTest
     [Theory]
     [InlineData(true)]
     [InlineData(false)]
-    public void GoForwardCommand_対象のViewへの画面遷移が行われた後にCanExecuteメソッド実行_RegionNavigationJournalのCanGoBackプロパティと同じ値が返される(bool canGoForward)
+    public void GoForwardCommand_OnNavigatedToメソッドが呼ばれた後にCanExecuteメソッド実行_RegionNavigationJournalのCanGoBackプロパティと同じ値が返される(bool canGoForward)
     {
         this._regionNavigationJournal.Setup(rnj => rnj.CanGoForward).Returns(canGoForward);
         var viewModelBase = new ViewModelBase();
