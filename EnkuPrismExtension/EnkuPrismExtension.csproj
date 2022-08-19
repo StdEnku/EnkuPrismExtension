@@ -4,7 +4,33 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>0.0.0</Version>
+    <Description>Prismを使用したMVVM開発にてさらにコードの量を抑えるためのライブラリ</Description>
+    <Copyright>Copyright (c) 2022 std::Enkū</Copyright>
+    <PackageProjectUrl>https://github.com/StdEnku/EnkuPrismExtension</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/StdEnku/EnkuPrismExtension</RepositoryUrl>
+    <PackageTags>Prism;MVVM;</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Authors>StdEnku</Authors>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\img\icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
