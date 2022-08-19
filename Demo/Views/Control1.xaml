@@ -5,11 +5,7 @@
              xmlns:constants="clr-namespace:Demo.Constants"
              prism:ViewModelLocator.AutoWireViewModel="True">
 
-    <DockPanel>
-        <Button Content="Navigate" Command="{Binding NavigateCommand}" CommandParameter="{x:Static constants:ViewNames.Control2}" DockPanel.Dock="Bottom" />
-
-        <Viewbox DockPanel.Dock="Top">
-            <Label Content="Control1" />
-        </Viewbox>
-    </DockPanel>
+    <Viewbox DockPanel.Dock="Top">
+        <Label Content="Control1" />
+    </Viewbox>
 </UserControl>

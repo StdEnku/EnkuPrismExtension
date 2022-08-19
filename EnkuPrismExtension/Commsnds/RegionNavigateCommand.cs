@@ -11,8 +11,8 @@ public class RegionNavigateCommand : ICommand
 {
     private readonly string _regionName;
     private readonly IRegionManager _regionManager;
-    private Func<NavigationParameters?>? _beforeNavigateAction = null;
-    private Action? _afterNavigateAction = null;
+    private Func<NavigationParameters>? _beforeNavigateAction = null;
+    private Action<NavigationResult>? _afterNavigateAction = null;
 
     /// <summary>
     /// コマンドを実行するかどうかに影響するような変更があった場合に発生します。
@@ -47,32 +47,20 @@ public class RegionNavigateCommand : ICommand
             if (nextViewName.Equals(currentViewName))
                 return;
 
-            NavigationParameters? navigationParams = null;
-            if (this._beforeNavigateAction is not null)
-            {
-                navigationParams = this._beforeNavigateAction();
-            }
+            // 画面遷移時のパラメータを取得or作成
+            var navigationParams = this._beforeNavigateAction is null ? 
+                                   new NavigationParameters() : 
+                                   this._beforeNavigateAction();
 
+            // RequestNavigate実行
             if (this._afterNavigateAction is not null)
             {
-                EventHandler<RegionNavigationEventArgs>? onNavigated = null;
-                onNavigated = (s, e) => 
-                {
-                    this._afterNavigateAction();
-                    region.NavigationService.Navigated -= onNavigated;
-                };
-                region.NavigationService.Navigated += onNavigated;
-            }
-
-            if (navigationParams is not null)
-            {
-                region.RequestNavigate(nextViewName, navigationParams);
+                region.RequestNavigate(nextViewName, this._afterNavigateAction, navigationParams);
             }
             else
             {
-                region.RequestNavigate(nextViewName);
+                region.RequestNavigate(nextViewName, navigationParams);
             }
-            
         }
     }
 
@@ -85,8 +73,8 @@ public class RegionNavigateCommand : ICommand
     /// <param name="afterNavigateAction">Navigate直後に実行される処理</param>
     public RegionNavigateCommand(IRegionManager regionManager, 
                                  string regionName,
-                                 Func<NavigationParameters?>? beforeNavigateAction = null,
-                                 Action? afterNavigateAction = null)
+                                 Func<NavigationParameters>? beforeNavigateAction = null,
+                                 Action<NavigationResult>? afterNavigateAction = null)
     {
         this._regionName = regionName;
         this._regionManager = regionManager;
